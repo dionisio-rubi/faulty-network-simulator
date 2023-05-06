@@ -29,7 +29,9 @@ python3 main.py
 ```python
 class Network:
     Attributes:
-        
+        Links
+        Routers
+        Weights
     Description:
         Represents our network
 ```
@@ -42,6 +44,7 @@ class Router:
         Routing_Table
         Routing_Protocol
         Neighbors ???
+        Reliability
     Description:
         Represents individual routers, including every attributes that real routers have.
 ```

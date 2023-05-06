@@ -1,11 +1,12 @@
 class Router:
     """Router class that holds most information that real routers would hold to help the simulation run."""
 
-    def __init__(self, IP_Address, MAC_Address, Routing_Protocol):
+    def __init__(self, IP_Address, MAC_Address, Routing_Protocol, reliability):
         """Initialize the router with its IP address, MAC address, and routing protocol."""
         self.IP_Address = IP_Address
         self.MAC_Address = MAC_Address
         self.Routing_Protocol = Routing_Protocol
+        self.reliability = reliability
         self.routing_table = {}
         self.neighbors = []
         # self.ARP_cache = {}
