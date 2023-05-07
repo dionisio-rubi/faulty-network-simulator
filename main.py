@@ -2,6 +2,7 @@
 from classes.network import Network
 from classes.router import Router
 
+
 def main():
     # Create a network
     network = Network()
