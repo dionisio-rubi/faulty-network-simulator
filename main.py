@@ -16,14 +16,14 @@ def main():
     f = Router("F", "222.222.222.222", "FF:FF:FF:FF:FF:FF", "RIP", 0.1)
 
     # Add routers to network
-    network.add_link(a, b, 10, 5)
-    network.add_link(a, c, 5, 5)
-    network.add_link(a, d, 7, 5)
-    network.add_link(b, e, 3, 5)
-    network.add_link(b, f, 6, 5)
-    network.add_link(c, e, 2, 5)
-    network.add_link(d, e, 4, 5)
-    network.add_link(e, f, 1, 5)
+    network.add_link(a, b, .5, 10, 5, 6)
+    network.add_link(a, c, .2, 5, 5, 7)
+    network.add_link(a, d, .8, 7, 5, 8)
+    network.add_link(b, e, .05, 3, 5, 3)
+    network.add_link(b, f, .75, 6, 5, 7)
+    network.add_link(c, e, .01, 2, 5, 4)
+    network.add_link(d, e, .18, 4, 5, 6)
+    network.add_link(e, f, .25, 1, 5, 2)
 
     # Menu, loop until user exits
     print("Welcome to the Network Simulator!")
