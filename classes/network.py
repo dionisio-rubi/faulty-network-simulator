@@ -3,8 +3,9 @@ class Network:
         self.routers = []
         self.links = []
         self.weights = []
+        self.link_reliability = []
         
-    def add_link(self, router1, router2, bandwidth, delay):
+    def add_link(self, router1, router2, link_reliability, bandwidth, delay, weight):
         # If the IP address of router is not in the list of ip addresses, add it
         if router1 not in self.routers:
             self.routers.append(router1)
@@ -16,8 +17,15 @@ class Network:
             self.links.append([router1, router2])
 
             # Calculate the weight of the link and add to list of weights
-            self.weights.append(bandwidth * delay)
+            self.weights.append(bandwidth*weight + delay*weight + (1-link_reliability)*weight)
 
     def get_routers(self):
         return self.routers
+    
+    def get_weight(self, router1, router2):
+        # Get the index of the link
+        index = self.links.index([router1, router2])
+        
+        # Return the weight of the link
+        return self.weights[index]
     

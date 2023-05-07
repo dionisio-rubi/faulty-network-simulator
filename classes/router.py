@@ -1,12 +1,13 @@
 class Router:
     """Router class that holds most information that real routers would hold to help the simulation run."""
 
-    def __init__(self, IP_Address, MAC_Address, Routing_Protocol, reliability):
+    def __init__(self, ID, IP_Address, MAC_Address, Routing_Protocol, failure_probability):
         """Initialize the router with its IP address, MAC address, and routing protocol."""
+        self.ID = ID # for the sake of having a simple ID for each router instead of printing the IP address
         self.IP_Address = IP_Address
         self.MAC_Address = MAC_Address
         self.Routing_Protocol = Routing_Protocol
-        self.reliability = reliability
+        self.failure_probability = failure_probability
         self.routing_table = {}
         self.neighbors = []
         # self.ARP_cache = {}
@@ -39,3 +40,11 @@ class Router:
     def update_routing_table(self, destination, cost, next_hop):
         """Update the routing table of the router."""
         self.routing_table[destination] = [cost, next_hop]
+
+    def get_failure_probability(self):
+        """Return the failure probability of the router."""
+        return self.failure_probability
+    
+    def get_ID(self):
+        """Return the ID of the router."""
+        return self.ID
