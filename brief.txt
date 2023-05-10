@@ -1,2 +1,0 @@
-
-The goal of this program is to simulate a router network in which routers, or the interfaces between them, fail intermittently. The network follows the Open Shortest Path First (OSPF) Protocol and the scope of the network is a single OSPF area, or a subnet. Utilizing Dijkstra's Algorithm, we can calculate the
